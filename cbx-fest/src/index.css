@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cbxOren: #FF5722;
+  --color-cbxHijau: #39FF14;
+  --color-cbxKuning: #FFEB3B;
+  --color-cbxBiru: #2196F3;
+  --color-cbxHitam: #0B0B0B;
+  
+  --shadow-brutal: 4px 4px 0px 0px #0B0B0B;
+  --shadow-brutal-lg: 8px 8px 0px 0px #0B0B0B;
+}
+
+body {
+  background-color: #f3f4f6; /* Warna abu terang andalan Nara biar warna neonnya pop out */
+  color: #0B0B0B;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Animasi teks berjalan jangan sampai hilang ya */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
