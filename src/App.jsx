@@ -64,11 +64,11 @@ function App() {
     </button>
 
     {/* Tombol Hamburger (Hanya muncul di HP) */}
-    <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-      <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
-      <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
-      <div className="w-6 h-1 bg-cbxHitam"></div>
-    </button>
+<button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+  <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
+  <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
+  <div className="w-6 h-1 bg-cbxHitam"></div>
+</button>
 
     {/* Menu Desktop */}
     <div className="hidden md:flex items-center gap-6 font-black text-xs uppercase tracking-wider">
