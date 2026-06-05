@@ -1,69 +1,16 @@
-/* 1. Reset supaya nggak meluap (wajib ada) */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  width: 100%;
-  overflow-x: hidden; /* Mengunci supaya nggak bisa geser kiri-kanan */
-  font-family: sans-serif;
-}
-
-/* 2. Gunakan Flexbox untuk tata letak utama */
-#center {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1200px; /* Lebar maksimal di desktop */
-  margin: 0 auto;    /* Posisikan di tengah */
-  padding: 20px;
-}
-
-/* 3. Hero: Biar sinkron di semua layar */
-.hero {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* 4. Trik Rahasia Responsif (Media Queries) */
-@media (max-width: 600px) {
-  /* Kalau layar HP, perkecil font dan lebar */
-  .hero .base {
-    width: 80% !important; /* Ikut lebar layar HP */
-  }
-  
-  #next-steps {
-    flex-direction: column; /* Biar menumpuk ke bawah (sinkron HP) */
-  }
-}
-
-/* 5. Pastikan semua gambar sinkron */
-img {
-  max-width: 100%;
-  height: auto;
-}
-@media (max-width: 768px) {
-  body, #center, #next-steps {
-    width: 100% !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    overflow-x: hidden !important;
-  }
-}
+/* App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html, body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100vw !important;
-  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Ini kunci utamanya! */
 }
 
-/* Memastikan tidak ada elemen yang lebih lebar dari layar */
-* {
-  box-sizing: border-box !important;
-  max-width: 100vw !important;
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }

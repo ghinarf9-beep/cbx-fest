@@ -34,8 +34,7 @@ function App() {
   });
 
   return (
-    <div className="min-h-screen bg-cbxKuning font-sans text-cbxHitam selection:bg-cbxOren selection:text-white overflow-x-hidden">
-      
+<div className="w-full min-h-screen bg-cbxKuning font-sans text-cbxHitam selection:bg-cbxOren selection:text-white overflow-x-hidden">      
       {/* 1. STIKER BERJALAN (MARQUEE EFFECT) */}
       <div className="bg-cbxHitam text-cbxHijau font-black py-2 uppercase tracking-widest text-xs sm:text-sm flex gap-8 whitespace-nowrap overflow-hidden border-b-4 border-cbxHitam">
         <div className="animate-marquee flex gap-12 shrink-0">
@@ -95,8 +94,7 @@ function App() {
       {currentPage === 'home' && (
         <>
           {/* HERO EXPLOSION SECTION */}
-<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full">  {/* Dekorasi Pojok */}
-  <div className="absolute top-10 left-[-20px] bg-cbxBiru text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase -rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
+<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full max-w-[100vw]">  <div className="absolute top-10 left-[-20px] bg-cbxBiru text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase -rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     #BERPESTARIADARIKAMPUNG
   </div>
   <div className="absolute bottom-12 right-[-20px] bg-cbxOren text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
