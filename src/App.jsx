@@ -4,6 +4,7 @@ import logoCbx from './assets/logo-cbx.png';
 function App() {
   // State untuk mengatur halaman aktif (bisa 'home', 'about', 'lineup')
   const [currentPage, setCurrentPage] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Fungsi pembantu untuk pindah halaman sekaligus scroll ke atas otomatis
   const navigateTo = (page) => {
@@ -53,35 +54,39 @@ function App() {
 
       {/* 2. DYNAMIC NAVBAR */}
       <nav className="bg-white border-b-4 border-cbxHitam sticky top-0 z-50 px-6 py-3 shadow-[4px_4px_0px_0px_#0B0B0B]">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Klik Logo buat balik ke Home */}
-          <button 
-            onClick={() => navigateTo('home')} 
-            className="flex items-center gap-2 bg-cbxOren text-white px-3 py-1.5 border-2 border-cbxHitam rounded-xl -rotate-2 shadow-[2px_2px_0px_0px_#0B0B0B] cursor-pointer hover:rotate-0 transition-transform"
-          >
-            <img src={logoCbx} alt="CBX Fest Logo" className="h-8 w-auto object-contain invert brightness-0" />
-            <span className="font-black text-xl tracking-tighter">CBXFEST</span>
-          </button>
-          
-          <div className="hidden md:flex items-center gap-6 font-black text-xs uppercase tracking-wider">
-            <button 
-              onClick={() => navigateTo('about')} 
-              className={`cursor-pointer transition-colors hover:text-cbxOren ${currentPage === 'about' ? 'text-cbxOren underline decoration-4' : ''}`}
-            >
-              About
-            </button>
-            <button 
-              onClick={() => navigateTo('lineup')} 
-              className={`cursor-pointer transition-colors hover:text-cbxBiru ${currentPage === 'lineup' ? 'text-cbxBiru underline decoration-4' : ''}`}
-            >
-              Line-Up
-            </button>
-            <a href="#tenant" onClick={() => navigateTo('home')} className="bg-cbxHijau px-4 py-2 border-2 border-cbxHitam rounded-lg shadow-[2px_2px_0px_0px_#0B0B0B] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
-              Daftar Tenant!
-            </a>
-          </div>
-        </div>
-      </nav>
+  <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
+    <button 
+      onClick={() => { navigateTo('home'); setIsMenuOpen(false); }} 
+      className="flex items-center gap-2 bg-cbxOren text-white px-3 py-1.5 border-2 border-cbxHitam rounded-xl -rotate-2 shadow-[2px_2px_0px_0px_#0B0B0B]"
+    >
+      <img src={logoCbx} alt="CBX Fest Logo" className="h-8 w-auto object-contain invert brightness-0" />
+      <span className="font-black text-xl tracking-tighter">CBXFEST</span>
+    </button>
+
+    {/* Tombol Hamburger (Hanya muncul di HP) */}
+    <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
+      <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
+      <div className="w-6 h-1 bg-cbxHitam"></div>
+    </button>
+
+    {/* Menu Desktop */}
+    <div className="hidden md:flex items-center gap-6 font-black text-xs uppercase tracking-wider">
+      <button onClick={() => navigateTo('about')} className="hover:text-cbxOren">About</button>
+      <button onClick={() => navigateTo('lineup')} className="hover:text-cbxBiru">Line-Up</button>
+      <a href="#tenant" className="bg-cbxHijau px-4 py-2 border-2 border-cbxHitam rounded-lg">Daftar Tenant!</a>
+    </div>
+  </div>
+
+  {/* Menu Dropdown HP */}
+  {isMenuOpen && (
+    <div className="md:hidden flex flex-col gap-4 py-6 border-t-2 border-cbxHitam mt-3 text-center font-black uppercase">
+      <button onClick={() => { navigateTo('about'); setIsMenuOpen(false); }}>About</button>
+      <button onClick={() => { navigateTo('lineup'); setIsMenuOpen(false); }}>Line-Up</button>
+      <a href="#tenant" onClick={() => setIsMenuOpen(false)} className="bg-cbxHijau w-40 mx-auto py-2 border-2 border-cbxHitam rounded-lg">Daftar Tenant!</a>
+    </div>
+  )}
+</nav>
 
       {/* RENDER HALAMAN BERDASARKAN STATE */}
       
@@ -287,20 +292,6 @@ function App() {
 
     <style>
   {`
-    /* Paksa semua konten supaya tidak meluap di layar HP */
-    html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-    
-    /* Tambahkan padding supaya konten tidak menempel ke pinggir layar HP */
-    @media (max-width: 767px) {
-      header, section, footer {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-      }
-    }
-
     .fade-in {
       animation: fadeIn 0.4s ease-in-out;
     }
