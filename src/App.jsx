@@ -65,6 +65,7 @@ function App() {
 
     {/* Tombol Hamburger (Hanya muncul di HP) */}
 <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+  {/* Ini kodingan hamburger icon kamu */}
   <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
   <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
   <div className="w-6 h-1 bg-cbxHitam"></div>
@@ -94,8 +95,7 @@ function App() {
       {currentPage === 'home' && (
         <>
           {/* HERO EXPLOSION SECTION */}
-<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam">
-  {/* Dekorasi Pojok */}
+<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full">  {/* Dekorasi Pojok */}
   <div className="absolute top-10 left-[-20px] bg-cbxBiru text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase -rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     #BERPESTARIADARIKAMPUNG
   </div>

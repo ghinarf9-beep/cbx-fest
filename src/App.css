@@ -54,3 +54,16 @@ img {
     overflow-x: hidden !important;
   }
 }
+
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative;
+}
+
+/* Memastikan tidak ada elemen yang lebih lebar dari layar */
+* {
+  box-sizing: border-box !important;
+  max-width: 100vw !important;
+}
