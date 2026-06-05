@@ -287,6 +287,20 @@ function App() {
 
     <style>
   {`
+    /* Paksa semua konten supaya tidak meluap di layar HP */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Tambahkan padding supaya konten tidak menempel ke pinggir layar HP */
+    @media (max-width: 767px) {
+      header, section, footer {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+
     .fade-in {
       animation: fadeIn 0.4s ease-in-out;
     }
