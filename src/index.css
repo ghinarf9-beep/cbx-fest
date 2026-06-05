@@ -26,3 +26,8 @@ body {
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
