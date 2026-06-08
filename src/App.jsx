@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import logoCbx from './assets/logo-cbx.png';
+import imgCewek from './assets/elemen_cewek_1.png';
+import imgCowok1 from './assets/elemen_cowok_1.png';
+import imgCowok2 from './assets/elemen_cowok_2.png';
+import imgCowok3 from './assets/elemen_cowok_3.png';
+import imgLayanganPot from './assets/elemen_layangan_dan_pot.png';
+import imgPintuKrucut from './assets/elemen_pintu_dan_krucut.png';
 
 function App() {
   // State untuk mengatur halaman aktif (bisa 'home', 'about', 'lineup')
@@ -272,6 +278,37 @@ function App() {
     </div>
   </main>
 )}
+
+    <section className="py-20 overflow-hidden">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <h2 className="text-4xl font-black uppercase mb-12 -rotate-2">
+      <span className="bg-cbxHitam text-cbxKuning px-4 py-2">STREET VIBE</span>
+    </h2>
+
+    {/* Susunan Foto & Elemen */}
+<div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mt-10">
+  {[imgCewek, imgCowok1, imgCowok2, imgCowok3].map((img, i) => (
+    <div key={i} className="group relative w-32 h-32 md:w-40 md:h-40 transition-transform duration-500 hover:-translate-y-4">
+      {/* Background Frame (Stiker) */}
+      <div className="absolute inset-0 bg-cbxOren rotate-3 rounded-2xl border-2 border-cbxHitam"></div>
+      
+      {/* Gambar Utama */}
+      <img 
+        src={img} 
+        className="relative w-full h-full object-contain p-2 hover:scale-110 transition-transform duration-300" 
+        alt={`Person ${i + 1}`} 
+      />
+    </div>
+  ))}
+</div>
+
+    {/* Elemen Dekoratif Pintu/Layangan */}
+    <div className="flex justify-center gap-12 mt-16 opacity-90">
+      <img src={imgLayanganPot} className="w-40 h-auto hover:rotate-12 transition-transform duration-300" alt="decor" />
+      <img src={imgPintuKrucut} className="w-40 h-auto hover:-rotate-12 transition-transform duration-300" alt="decor" />
+    </div>
+  </div>
+</section>
 
       {/* 6. OUTRO & FOOTER */}
       <footer className="bg-cbxHitam text-white py-12 px-6 border-t-4 border-cbxHitam">
