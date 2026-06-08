@@ -13,10 +13,24 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Fungsi pembantu untuk pindah halaman sekaligus scroll ke atas otomatis
-  const navigateTo = (page) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+ const navigateTo = (page, anchor = null) => {
+  setCurrentPage(page);
+  
+  // Kasih jeda sedikit (100ms) biar React sempat render halaman 'home' dulu
+  // sebelum dia nyari ID 'tenant' untuk di-scroll
+  setTimeout(() => {
+    if (anchor) {
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, 100);
+  
+  setIsMenuOpen(false);
+};
   
   // Logic Countdown Timer
   const calculateTimeLeft = () => {
@@ -80,8 +94,12 @@ function App() {
     <div className="hidden md:flex items-center gap-6 font-black text-xs uppercase tracking-wider">
       <button onClick={() => navigateTo('about')} className="hover:text-cbxOren">About</button>
       <button onClick={() => navigateTo('lineup')} className="hover:text-cbxBiru">Line-Up</button>
-      <a href="#tenant" className="bg-cbxHijau px-4 py-2 border-2 border-cbxHitam rounded-lg">Daftar Tenant!</a>
-    </div>
+<button 
+  onClick={() => navigateTo('home', 'tenant')} 
+  className="bg-cbxHijau px-4 py-2 border-2 border-cbxHitam rounded-lg cursor-pointer hover:bg-opacity-90 transition-all"
+>
+  Daftar Tenant!
+</button>    </div>
   </div>
 
   {/* Menu Dropdown HP */}
@@ -89,8 +107,12 @@ function App() {
     <div className="md:hidden flex flex-col gap-4 py-6 border-t-2 border-cbxHitam mt-3 text-center font-black uppercase">
       <button onClick={() => { navigateTo('about'); setIsMenuOpen(false); }}>About</button>
       <button onClick={() => { navigateTo('lineup'); setIsMenuOpen(false); }}>Line-Up</button>
-      <a href="#tenant" onClick={() => setIsMenuOpen(false)} className="bg-cbxHijau w-40 mx-auto py-2 border-2 border-cbxHitam rounded-lg">Daftar Tenant!</a>
-    </div>
+<button 
+  onClick={() => navigateTo('home', 'tenant')} 
+  className="bg-cbxHijau w-40 mx-auto py-2 border-2 border-cbxHitam rounded-lg font-black"
+>
+  Daftar Tenant!
+</button>    </div>
   )}
 </nav>
 
