@@ -288,30 +288,37 @@ function App() {
   {/* Layout Collage */}
   <div className="relative h-[500px] md:h-[600px] w-full">
     
-    {/* Foto 1 (Cewek) - Miring ke kiri */}
-    <div className="absolute top-0 left-[10%] md:left-[20%] w-32 md:w-48 rotate-[-10deg] group hover:rotate-0 transition-all duration-500 z-10">
-      <div className="bg-cbxOren p-2 border-4 border-cbxHitam rounded-2xl shadow-[6px_6px_0px_0px_#0B0B0B]">
-        <img src={imgCewek} className="w-full" alt="Street Person" />
-      </div>
+    {/* Foto 1 (Cewek) */}
+  <div className="absolute top-0 left-[10%] md:left-[20%] w-32 md:w-48 rotate-[-10deg] group hover:rotate-0 transition-all duration-500 z-10">
+    <div className="bg-cbxOren p-2 border-4 border-cbxHitam rounded-2xl shadow-[6px_6px_0px_0px_#0B0B0B]">
+      <img src={imgCewek} className="w-full" alt="Street Person" />
     </div>
+  </div>
 
-    {/* Foto 2 (Cowok 1) - Miring ke kanan */}
-    <div className="absolute top-[150px] right-[10%] md:right-[25%] w-28 md:w-40 rotate-[12deg] group hover:rotate-0 transition-all duration-500 z-20">
-      <div className="bg-cbxBiru p-2 border-4 border-cbxHitam rounded-2xl shadow-[6px_6px_0px_0px_#0B0B0B]">
-        <img src={imgCowok1} className="w-full" alt="Street Person" />
-      </div>
+  {/* Foto 2 (Cowok 1) */}
+  <div className="absolute top-[120px] right-[5%] md:right-[25%] w-28 md:w-40 rotate-[12deg] group hover:rotate-0 transition-all duration-500 z-20">
+    <div className="bg-cbxBiru p-2 border-4 border-cbxHitam rounded-2xl shadow-[6px_6px_0px_0px_#0B0B0B]">
+      <img src={imgCowok1} className="w-full" alt="Street Person" />
     </div>
+  </div>
 
-    {/* Foto 3 (Cowok 2) - Bawah kiri */}
-    <div className="absolute top-[250px] left-[5%] md:left-[30%] w-36 md:w-52 rotate-[-5deg] group hover:rotate-0 transition-all duration-500 z-30">
-      <div className="bg-cbxHijau p-2 border-4 border-cbxHitam rounded-2xl shadow-[6px_6px_0px_0px_#0B0B0B]">
-        <img src={imgCowok2} className="w-full" alt="Street Person" />
-      </div>
+  {/* Foto 3 (Cowok 2) */}
+  <div className="absolute top-[250px] left-[5%] md:left-[30%] w-36 md:w-52 rotate-[-5deg] group hover:rotate-0 transition-all duration-500 z-30">
+    <div className="bg-cbxHijau p-2 border-4 border-cbxHitam rounded-2xl shadow-[6px_6px_0px_0px_#0B0B0B]">
+      <img src={imgCowok2} className="w-full" alt="Street Person" />
     </div>
+  </div>
 
-    {/* Elemen Dekoratif (Layangan & Pintu) - Disebar */}
-    <img src={imgLayanganPot} className="absolute bottom-[50px] right-[5%] w-24 md:w-32 rotate-[20deg] z-40" alt="decor" />
-    <img src={imgPintuKrucut} className="absolute bottom-0 left-[10%] w-24 md:w-32 rotate-[-15deg] z-40" alt="decor" />
+  {/* Foto 4 (Cowok 3) - BARU */}
+  <div className="absolute top-[350px] right-[15%] md:right-[35%] w-32 md:w-44 rotate-[8deg] group hover:rotate-0 transition-all duration-500 z-30">
+    <div className="bg-cbxKuning p-2 border-4 border-cbxHitam rounded-2xl shadow-[6px_6px_0px_0px_#0B0B0B]">
+      <img src={imgCowok3} className="w-full" alt="Street Person" />
+    </div>
+  </div>
+
+  {/* Elemen Dekoratif */}
+  <img src={imgLayanganPot} className="absolute bottom-[20px] right-[5%] w-24 md:w-32 rotate-[20deg] z-40" alt="decor" />
+  <img src={imgPintuKrucut} className="absolute bottom-0 left-[10%] w-24 md:w-32 rotate-[-15deg] z-40" alt="decor" />
     
   </div>
 </section>
