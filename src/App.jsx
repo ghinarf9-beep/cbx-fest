@@ -186,7 +186,7 @@ function App() {
 </header>
 
           {/* TEASER LINE-UP */}
-          <section className="bg-cbxBiru py-16 px-6 border-b-4 border-cbxHitam text-center text-white">
+          <section className="bg-cbxHijau py-16 px-6 border-b-4 border-cbxHitam text-center text-white">
             <h2 className="text-3xl sm:text-5xl font-black uppercase mb-8 drop-shadow-[3px_3px_0px_rgba(11,11,11,1)]">Bakal Meledak Di Panggung!</h2>
             <button 
               onClick={() => navigateTo('lineup')}
@@ -206,7 +206,7 @@ function App() {
               <p className="text-lg font-bold text-slate-700 max-w-xl mx-auto mb-8">
                 Kesempatan emas buat warung, kedai kopi, industri kreatif rumahan, dan UMKM sekitar buat pamer produk di hadapan ribuan audiens festival musik!
               </p>
-              <div className="bg-cbxKuning border-2 border-cbxHitam rounded-2xl p-4 mb-8 inline-block text-left font-bold text-sm sm:text-base space-y-1 shadow-[4px_4px_0px_0px_#0B0B0B]">
+              <div className="bg-cbxOren border-2 border-cbxHitam rounded-2xl p-4 mb-8 inline-block text-left font-bold text-sm sm:text-base space-y-1 shadow-[4px_4px_0px_0px_#0B0B0B]">
                 <p>✅ Fasilitas Lapak Premium + Listrik Aman</p>
                 <p>✅ Promosi Brand di Media Sosial CBX Fest</p>
                 <p>✅ Tiket Masuk Eksklusif untuk Crew Tenant</p>
