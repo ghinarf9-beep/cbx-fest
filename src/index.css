@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cbxOren: #FF5722;
-  --color-cbxHijau: #39FF14;
-  --color-cbxKuning: #FFEB3B;
-  --color-cbxBiru: #2196F3;
+  --color-cbxOren: #FFB54F;
+  --color-cbxHijau: #90CD86;
+  --color-cbxKuning: #FFF28A;
+  --color-cbxBiru: #83A8CB;
   --color-cbxHitam: #0B0B0B;
   
   --shadow-brutal: 4px 4px 0px 0px #0B0B0B;
