@@ -125,7 +125,7 @@ function App() {
 <header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full max-w-[100vw]">  <div className="absolute top-10 left-[-20px] bg-cbxBiru text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase -rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     #BERPESTARIADARIKAMPUNG
   </div>
-  <div className="absolute bottom-12 right-[-20px] bg-cbxOren text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
+  <div className="absolute bottom-12 right-[-20px] bg-cbxHitam text-[#FFF28A] font-[#FFF28A] px-6 py-2 border-4 border-cbxKuning rounded-2xl uppercase rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     FESTIVALNYA WONG PUSAT & KAMPUNG
   </div>
 
@@ -186,7 +186,7 @@ function App() {
 </header>
 
           {/* TEASER LINE-UP */}
-          <section className="bg-cbxHijau py-16 px-6 border-b-4 border-cbxHitam text-center text-white">
+          <section className="bg-cbxKuning py-16 px-6 border-b-4 border-cbxHitam text-center text-white">
             <h2 className="text-3xl sm:text-5xl font-black uppercase mb-8 drop-shadow-[3px_3px_0px_rgba(11,11,11,1)]">Bakal Meledak Di Panggung!</h2>
             <button 
               onClick={() => navigateTo('lineup')}
@@ -212,7 +212,7 @@ function App() {
                 <p>✅ Tiket Masuk Eksklusif untuk Crew Tenant</p>
               </div>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://forms.gle/9YEagwiiyunijxHj8" className="bg-cbxOren text-white font-black uppercase text-base tracking-wider px-8 py-4 rounded-xl border-2 border-cbxHitam shadow-[4px_4px_0px_0px_#0B0B0B] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+                <a href="https://forms.gle/9YEagwiiyunijxHj8" className="bg-cbxHijau text-white font-black uppercase text-base tracking-wider px-8 py-4 rounded-xl border-2 border-cbxHitam shadow-[4px_4px_0px_0px_#0B0B0B] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
                   🎪 Isi Formulir Tenant (Google Form)
                 </a>
                 <a href="https://wa.me/6285135595053" target="_blank" rel="noreferrer" className="bg-white text-cbxHitam font-black uppercase text-base tracking-wider px-8 py-4 rounded-xl border-2 border-cbxHitam shadow-[4px_4px_0px_0px_#0B0B0B] hover:bg-cbxHitam hover:text-white transition-colors">
@@ -260,7 +260,7 @@ function App() {
       {/* === HALAMAN LINE-UP === */}
 {currentPage === 'lineup' && (
   <main className="fade-in max-w-4xl mx-auto py-16 px-6 text-center">
-    <div className="bg-cbxBiru border-4 border-cbxHitam rounded-[36px] p-8 md:p-12 shadow-[8px_8px_0px_0px_#0B0B0B] text-white">
+    <div className="bg-cbxHijau border-4 border-cbxHitam rounded-[36px] p-8 md:p-12 shadow-[8px_8px_0px_0px_#0B0B0B] text-white">
       <h2 className="text-4xl md:text-6xl font-black uppercase mb-2">OFFICIAL LINE-UP</h2>
       <p className="font-bold text-lg mb-10 text-white/80">17 Agustus 2026 | Jakarta Barat</p>
 
