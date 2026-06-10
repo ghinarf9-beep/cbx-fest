@@ -54,8 +54,7 @@ function App() {
   });
 
   return (
-<div className="w-full min-h-screen bg-cbxOren font-sans text-cbxHitam selection:bg-cbxHijau selection:text-white overflow-x-hidden">      
-      {/* 1. STIKER BERJALAN (MARQUEE EFFECT) */}
+<div className="w-full min-h-screen bg-gradient-to-br from-cbxOren via-white to-cbxHijau font-sans text-cbxHitam ...">      {/* 1. STIKER BERJALAN (MARQUEE EFFECT) */}
       <div className="bg-cbxHitam text-cbxHijau font-black py-2 uppercase tracking-widest text-xs sm:text-sm flex gap-8 whitespace-nowrap overflow-hidden border-b-4 border-cbxHitam">
         <div className="animate-marquee flex gap-12 shrink-0">
           <span>⚡ LIVE MUSIC PERFORMANCE ⚡</span>
@@ -122,10 +121,11 @@ function App() {
       {currentPage === 'home' && (
         <>
           {/* HERO EXPLOSION SECTION */}
-<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full max-w-[100vw]">  <div className="absolute top-10 left-[-20px] bg-cbxBiru text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase -rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
+<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full max-w-[100vw]">  
+  <div className="absolute top-10 left-[-20px] bg-cbxKuning text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase -rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     #BERPESTARIADARIKAMPUNG
   </div>
-  <div className="absolute bottom-12 right-[-20px] bg-cbxHitam text-[#FFF28A] font-[#FFF28A] px-6 py-2 border-4 border-cbxKuning rounded-2xl uppercase rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
+  <div className="absolute bottom-12 right-[-20px] bg-cbxHijau text-white font-cbxHitam px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     FESTIVALNYA WONG PUSAT & KAMPUNG
   </div>
 
@@ -186,11 +186,11 @@ function App() {
 </header>
 
           {/* TEASER LINE-UP */}
-          <section className="bg-cbxKuning py-16 px-6 border-b-4 border-cbxHitam text-center text-white">
+          <section className="bg-cbxOren py-16 px-6 border-b-4 border-cbxHitam text-center text-white">
             <h2 className="text-3xl sm:text-5xl font-black uppercase mb-8 drop-shadow-[3px_3px_0px_rgba(11,11,11,1)]">Bakal Meledak Di Panggung!</h2>
             <button 
               onClick={() => navigateTo('lineup')}
-              className="bg-cbxOren text-white font-black uppercase px-6 py-3 border-4 border-cbxHitam rounded-xl shadow-[4px_4px_0px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
+              className="bg-cbxKuning text-white font-black uppercase px-6 py-3 border-4 border-cbxHitam rounded-xl shadow-[4px_4px_0px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
             >
               🔥 LIHAT LINE-UP LENGKAP
             </button>
@@ -249,7 +249,7 @@ function App() {
             
             <button 
               onClick={() => navigateTo('home')}
-              className="mt-10 bg-cbxHitam text-white font-black uppercase px-6 py-3 rounded-xl border-2 border-cbxHitam hover:bg-cbxOren transition-colors cursor-pointer"
+              className="mt-10 bg-cbxHijau text-white font-black uppercase px-6 py-3 rounded-xl border-2 border-cbxHitam hover:bg-cbxOren transition-colors cursor-pointer"
             >
               ⬅️ Kembali Ke Beranda
             </button>
@@ -346,19 +346,19 @@ function App() {
 </section>
 
       {/* 6. OUTRO & FOOTER */}
-      <footer className="bg-cbxHitam text-white py-12 px-6 border-t-4 border-cbxHitam">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-3">
-            <div className="bg-white p-2 border border-white rounded-lg">
-              <img src={logoCbx} alt="CBX Fest Logo Footer" className="h-6 w-auto object-contain" />
-            </div>
-            <span className="font-black text-xl tracking-tight text-cbxKuning">CBX FEST 2026</span>
-          </div>
-          <p className="text-xs text-slate-400 font-bold text-center md:text-right">
-            &copy; 2026 CBX FEST. Powered with 🔥 by Ghina. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
+<footer className="bg-cbxOren text-cbxHitam py-12 px-6 border-t-4 border-cbxHitam">  
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div className="flex items-center gap-3">
+      <div className="bg-white p-2 border border-cbxHitam rounded-lg">
+        <img src={logoCbx} alt="CBX Fest Logo Footer" className="h-6 w-auto object-contain" />
+      </div>
+      <span className="font-black text-xl tracking-tight text-cbxHitam">CBX FEST 2026</span>
+    </div>
+    <p className="text-xs text-cbxHitam font-bold text-center md:text-right">
+      &copy; 2026 CBX FEST. Powered with 🔥 by Ghina. All Rights Reserved.
+    </p>
+  </div>
+</footer>
 
     <style>
   {`
