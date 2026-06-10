@@ -54,7 +54,7 @@ function App() {
   });
 
   return (
-<div className="w-full min-h-screen bg-cbxKuning font-sans text-cbxHitam selection:bg-cbxOren selection:text-white overflow-x-hidden">      
+<div className="w-full min-h-screen bg-cbxOren font-sans text-cbxHitam selection:bg-cbxHijau selection:text-white overflow-x-hidden">      
       {/* 1. STIKER BERJALAN (MARQUEE EFFECT) */}
       <div className="bg-cbxHitam text-cbxHijau font-black py-2 uppercase tracking-widest text-xs sm:text-sm flex gap-8 whitespace-nowrap overflow-hidden border-b-4 border-cbxHitam">
         <div className="animate-marquee flex gap-12 shrink-0">
