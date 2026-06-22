@@ -54,64 +54,65 @@ function App() {
   });
 
   return (
-<div className="w-full min-h-screen bg-gradient-to-br from-cbxOren via-white to-cbxHijau font-sans text-cbxHitam ...">      {/* 1. STIKER BERJALAN (MARQUEE EFFECT) */}
+<div className="w-full min-h-screen bg-gradient-to-br from-cbxOren via-white to-cbxHijau font-sans text-cbxHitam">
       <div className="bg-cbxHitam text-cbxHijau font-black py-2 uppercase tracking-widest text-xs sm:text-sm flex gap-8 whitespace-nowrap overflow-hidden border-b-4 border-cbxHitam">
         <div className="animate-marquee flex gap-12 shrink-0">
           <span>⚡ LIVE MUSIC PERFORMANCE ⚡</span>
           <span>🎪 OPEN REGISTRATION FOR TENANT UMKM 🎪</span>
-          <span>🎨 GRAFFITI EXHIBITION 🎨</span>
+          <span>🛹 COMMUNITY ACTIVITY 🛹</span>
           <span>🔥 AGUSTUS 2026 IN JAKARTA BARAT 🔥</span>
         </div>
         <div className="animate-marquee flex gap-12 shrink-0" aria-hidden="true">
           <span>⚡ LIVE MUSIC PERFORMANCE ⚡</span>
           <span>🎪 OPEN REGISTRATION FOR TENANT UMKM 🎪</span>
-          <span>🎨 GRAFFITI EXHIBITION 🎨</span>
+          <span>🛹 COMMUNITY ACTIVITY 🛹</span>
           <span>🔥 AGUSTUS 2026 IN JAKARTA BARAT 🔥</span>
         </div>
       </div>
 
       {/* 2. DYNAMIC NAVBAR */}
-      <nav className="bg-white border-b-4 border-cbxHitam sticky top-0 z-50 px-6 py-3 shadow-[4px_4px_0px_0px_#0B0B0B]">
-  <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
-    <button 
-      onClick={() => { navigateTo('home'); setIsMenuOpen(false); }} 
-      className="flex items-center gap-2 bg-cbxOren text-white px-3 py-1.5 border-2 border-cbxHitam rounded-xl -rotate-2 shadow-[2px_2px_0px_0px_#0B0B0B]"
-    >
-      <img src={logoCbx} alt="CBX Fest Logo" className="h-8 w-auto object-contain invert brightness-0" />
-      <span className="font-black text-xl tracking-tighter">CBXFEST</span>
+     <nav className="bg-white border-b-4 border-cbxHitam sticky top-0 z-50 py-3 shadow-[4px_4px_0px_0px_#0B0B0B]">
+  {/* Kita hilangkan max-w-6xl biar dia full lebar layar, terus atur px-nya */}
+  <div className="w-full px-2 sm:px-4 flex justify-between items-center">
+    
+    {/* KIRI: Logo & CBXFEST (Mepet Kiri) */}
+    <div className="flex items-center gap-2">
+      <img src={logoCbx} alt="CBX Logo" className="h-12 w-auto object-contain" />
+      <button 
+        onClick={() => { navigateTo('home'); setIsMenuOpen(false); }} 
+        className="bg-cbxOren text-white px-4 py-2 border-2 border-cbxHitam rounded-xl -rotate-2 shadow-[2px_2px_0px_0px_#0B0B0B] font-black text-lg tracking-tighter"
+      >
+        CBXFEST
+      </button>
+    </div>
+
+    {/* KANAN: Menu Desktop (Mepet Kanan) */}
+    <div className="hidden md:flex items-center gap-6 font-black text-sm uppercase tracking-wider pr-2">
+      <button onClick={() => navigateTo('about')} className="hover:text-cbxOren transition-colors">About</button>
+      <button onClick={() => navigateTo('lineup')} className="hover:text-cbxBiru transition-colors">Line-Up</button>
+      <button 
+        onClick={() => navigateTo('home', 'tenant')} 
+        className="bg-cbxHijau px-5 py-2 border-2 border-cbxHitam rounded-lg shadow-[3px_3px_0px_0px_#0B0B0B] hover:bg-opacity-90 transition-all"
+      >
+        Daftar Tenant!
+      </button>
+    </div>
+
+    {/* Hamburger Mobile */}
+    <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
+      <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
+      <div className="w-6 h-1 bg-cbxHitam"></div>
     </button>
-
-    {/* Tombol Hamburger (Hanya muncul di HP) */}
-<button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-  {/* Ini kodingan hamburger icon kamu */}
-  <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
-  <div className="w-6 h-1 bg-cbxHitam mb-1"></div>
-  <div className="w-6 h-1 bg-cbxHitam"></div>
-</button>
-
-    {/* Menu Desktop */}
-    <div className="hidden md:flex items-center gap-6 font-black text-xs uppercase tracking-wider">
-      <button onClick={() => navigateTo('about')} className="hover:text-cbxOren">About</button>
-      <button onClick={() => navigateTo('lineup')} className="hover:text-cbxBiru">Line-Up</button>
-<button 
-  onClick={() => navigateTo('home', 'tenant')} 
-  className="bg-cbxHijau px-4 py-2 border-2 border-cbxHitam rounded-lg cursor-pointer hover:bg-opacity-90 transition-all"
->
-  Daftar Tenant!
-</button>    </div>
   </div>
-
-  {/* Menu Dropdown HP */}
+  
+  {/* Dropdown Mobile */}
   {isMenuOpen && (
     <div className="md:hidden flex flex-col gap-4 py-6 border-t-2 border-cbxHitam mt-3 text-center font-black uppercase">
       <button onClick={() => { navigateTo('about'); setIsMenuOpen(false); }}>About</button>
       <button onClick={() => { navigateTo('lineup'); setIsMenuOpen(false); }}>Line-Up</button>
-<button 
-  onClick={() => navigateTo('home', 'tenant')} 
-  className="bg-cbxHijau w-40 mx-auto py-2 border-2 border-cbxHitam rounded-lg font-black"
->
-  Daftar Tenant!
-</button>    </div>
+      <button onClick={() => navigateTo('home', 'tenant')} className="bg-cbxHijau w-40 mx-auto py-2 border-2 border-cbxHitam rounded-lg font-black">Daftar Tenant!</button>
+    </div>
   )}
 </nav>
 
@@ -121,18 +122,26 @@ function App() {
       {currentPage === 'home' && (
         <>
           {/* HERO EXPLOSION SECTION */}
-<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full max-w-[100vw]">  
+<header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full max-w-[100vw]">
+  
+  {/* Dekorasi lainnya tetap di bawahnya */}
   <div className="absolute top-10 left-[-20px] bg-cbxKuning text-white font-black px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase -rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     #BERPESTARIADARIKAMPUNG
   </div>
+  
   <div className="absolute bottom-12 right-[-20px] bg-cbxHijau text-white font-cbxHitam px-6 py-2 border-4 border-cbxHitam rounded-2xl uppercase rotate-12 shadow-[4px_4px_0px_0px_#0B0B0B] hidden lg:block text-sm">
     FESTIVALNYA WONG PUSAT & KAMPUNG
   </div>
 
   <div className="max-w-4xl mx-auto">
-    <div className="inline-block bg-white p-6 border-4 border-cbxHitam rounded-[32px] shadow-[8px_8px_0px_0px_#0B0B0B] mb-8 rotate-3 hover:rotate-0 transition-transform duration-300">
-      <img src={logoCbx} alt="CBX Logo Besar" className="h-32 sm:h-44 w-auto object-contain" />
-    </div>
+{/* LOGO TANPA BINGKAI, TAPI BISA GOYANG */}
+<div className="relative inline-block mb-4 transition-transform duration-300 hover:-rotate-3 hover:scale-105 cursor-pointer">
+  <img 
+    src={logoCbx} 
+    alt="CBX Fest Logo" 
+    className="h-50 sm:h-70 w-auto object-contain drop-shadow-[8px_8px_0px_rgba(11,11,11,1)]" 
+  />
+</div>
 
     <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6">
       SAATNYA KAMPUNG <br />
