@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Proposal from './pages/proposal';
 import logoCbx from './assets/logo-cbx.png';
 import imgCewek from './assets/elemen_cewek_1.png';
 import imgCowok1 from './assets/elemen_cowok_1.png';
@@ -90,6 +92,8 @@ function App() {
     <div className="hidden md:flex items-center gap-6 font-black text-sm uppercase tracking-wider pr-2">
       <button onClick={() => navigateTo('about')} className="hover:text-cbxOren transition-colors">About</button>
       <button onClick={() => navigateTo('lineup')} className="hover:text-cbxBiru transition-colors">Line-Up</button>
+      {/* Tombol Proposal Baru */}
+      <button onClick={() => navigateTo('proposal')} className="hover:text-cbxKuning transition-colors">Proposal</button>
       <button 
         onClick={() => navigateTo('home', 'tenant')} 
         className="bg-cbxHijau px-5 py-2 border-2 border-cbxHitam rounded-lg shadow-[3px_3px_0px_0px_#0B0B0B] hover:bg-opacity-90 transition-all"
@@ -111,6 +115,8 @@ function App() {
     <div className="md:hidden flex flex-col gap-4 py-6 border-t-2 border-cbxHitam mt-3 text-center font-black uppercase">
       <button onClick={() => { navigateTo('about'); setIsMenuOpen(false); }}>About</button>
       <button onClick={() => { navigateTo('lineup'); setIsMenuOpen(false); }}>Line-Up</button>
+      {/* Tombol Proposal Baru di Mobile */}
+      <button onClick={() => { navigateTo('proposal'); setIsMenuOpen(false); }}>Proposal</button>
       <button onClick={() => navigateTo('home', 'tenant')} className="bg-cbxHijau w-40 mx-auto py-2 border-2 border-cbxHitam rounded-lg font-black">Daftar Tenant!</button>
     </div>
   )}
@@ -118,8 +124,25 @@ function App() {
 
       {/* RENDER HALAMAN BERDASARKAN STATE */}
       
-      {/* === HALAMAN HOME === */}
-      {currentPage === 'home' && (
+      {/* RENDER HALAMAN BERDASARKAN STATE */}
+
+{/* === HALAMAN PROPOSAL (TAMBAHAN) === */}
+{currentPage === 'proposal' && (
+  <div className="p-10 max-w-5xl mx-auto min-h-screen bg-[#FDFBF7]">
+    <h1 className="text-3xl font-black mb-6 text-[#0B0B0B]">PROPOSAL CBX FEST 2026</h1>
+    <div className="w-full h-[800px] border-4 border-[#0B0B0B] bg-gray-200">
+      <object data="/proposal.pdf" type="application/pdf" width="100%" height="100%">
+        <p>Browser kamu tidak bisa menampilkan PDF. <a href="/proposal.pdf" target="_blank" className="text-blue-600 underline">Klik di sini untuk download PDF</a></p>
+      </object>
+    </div>
+    <button onClick={() => navigateTo('home')} className="mt-6 bg-[#FFB763] px-6 py-2 font-bold border-2 border-[#0B0B0B] hover:bg-[#ffaa40]">
+      KEMBALI KE BERANDA
+    </button>
+  </div>
+)}
+
+{/* === HALAMAN HOME === */}
+{currentPage === 'home' && (
         <>
           {/* HERO EXPLOSION SECTION */}
 <header className="fade-in relative py-20 px-6 text-center overflow-hidden border-b-4 border-cbxHitam w-full max-w-[100vw]">
@@ -234,28 +257,33 @@ function App() {
       )}
 
       {/* === HALAMAN ABOUT === */}
-      {currentPage === 'about' && (
-        <main className="fade-in max-w-4xl mx-auto py-16 px-6">
-          <div className="bg-white border-4 border-cbxHitam rounded-[32px] p-8 md:p-12 shadow-[8px_8px_0px_0px_#0B0B0B] relative">
-            <span className="absolute -top-5 -right-2 bg-cbxBiru text-white font-black px-4 py-1.5 border-2 border-cbxHitam rounded-lg rotate-6 text-xs uppercase">
-              #ABOUT US
-            </span>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">
-              APA ITU <span className="bg-cbxOren text-white px-4 py-1 inline-block -rotate-1 border-2 border-cbxHitam rounded-xl shadow-[3px_3px_0px_0px_#0B0B0B]">CBX FEST?</span>
-            </h2>
-            <div className="space-y-6 font-bold text-base sm:text-lg leading-relaxed text-slate-800">
-              <p>
-                <span className="text-cbxOren font-black">CBX (Collaboration Build Xpression) Festival</span> lahir dari sebuah kegelisahan sederhana: ruang berekspresi yang otentik di era modern jakarta semakin hari semakin terpinggirkan.
-              </p>
-              <div className="bg-cbxKuning border-2 border-cbxHitam p-6 rounded-2xl shadow-[4px_4px_0px_0px_#0B0B0B] rotate-1 my-6 text-cbxHitam">
-                <h4 className="font-black uppercase text-xl mb-2">🎯 MISI UTAMA KITA</h4>
-                <p>Menjadi wadah kolektif yang menjembatani talenta kreatif lokal, musisi independen, komunitas jalanan, dan pelaku UMKM akar rumput untuk saling berkolaborasi, bertukar energi, hingga menciptakan ekosistem industri kreatif yang mandiri.</p>
-              </div>
-              <p>
-                Di sini, tembok jalanan disulap jadi galeri grafiti hidup, riuhnya obrolan warung kopi bersatu dengan dentuman distorsi panggung, dan semua orang—baik dari pusat kota maupun pinggiran kampung—melebur menjadi satu tanpa sekat.
-              </p>
-            </div>
-            
+{currentPage === 'about' && (
+  <main className="fade-in max-w-4xl mx-auto py-16 px-6">
+    <div className="bg-white border-4 border-cbxHitam rounded-[32px] p-8 md:p-12 shadow-[8px_8px_0px_0px_#0B0B0B] relative">
+      <span className="absolute -top-5 -right-2 bg-cbxBiru text-white font-black px-4 py-1.5 border-2 border-cbxHitam rounded-lg rotate-6 text-xs uppercase">
+        #ABOUT US
+      </span>
+      <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">
+        APA ITU <span className="bg-cbxOren text-white px-4 py-1 inline-block -rotate-1 border-2 border-cbxHitam rounded-xl shadow-[3px_3px_0px_0px_#0B0B0B]">CBX FEST?</span>
+      </h2>
+      
+      <div className="space-y-6 font-bold text-base sm:text-lg leading-relaxed text-slate-800">
+        <p>
+          <span className="text-cbxOren font-black">CBX (Collaboration Build Xpression) Festival</span> hadir sebagai ruang kolaborasi, hiburan, dan ekspresi masyarakat yang lahir di tengah hiruk pikuk metropolitan Jakarta. Kami percaya bahwa di balik padatnya pembangunan kota, ada potensi besar dari warga, komunitas kreatif, dan pelaku UMKM lokal yang perlu wadah untuk berkembang.
+        </p>
+
+        <div className="bg-cbxKuning border-2 border-cbxHitam p-6 rounded-2xl shadow-[4px_4px_0px_0px_#0B0B0B] rotate-1 my-6 text-cbxHitam">
+          <h4 className="font-black uppercase text-xl mb-2">🎯 VISI & MISI KITA</h4>
+          <p>
+            Visi kami adalah menciptakan <em>the new pop culture</em> pesta rakyat dari kampung ke kampung. Kami hadir untuk menghadirkan ruang hiburan di tengah kampung, menjadi wadah bagi talenta lokal untuk berkarya, serta memastikan acara ini terus tumbuh dan dikenal luas di berbagai wilayah.
+          </p>
+        </div>
+
+        <p>
+          Bukan sekadar festival musik, CBX FEST adalah perayaan semangat kebersamaan khas perayaan kampung dengan tema <span className="italic">"Berpesta Ria Dari Kampung"</span>. Kami ingin menghadirkan ruang di mana warga tidak lagi hanya menjadi penikmat, tetapi menjadi bagian aktif dalam perkembangan budaya lokal yang inspiratif, berdampak, dan mampu memberikan nilai positif bagi banyak orang.
+        </p>
+      </div>
+                
             <button 
               onClick={() => navigateTo('home')}
               className="mt-10 bg-cbxHijau text-white font-black uppercase px-6 py-3 rounded-xl border-2 border-cbxHitam hover:bg-cbxOren transition-colors cursor-pointer"
@@ -355,17 +383,32 @@ function App() {
 </section>
 
       {/* 6. OUTRO & FOOTER */}
-<footer className="bg-cbxOren text-cbxHitam py-12 px-6 border-t-4 border-cbxHitam">  
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <div className="flex items-center gap-3">
-      <div className="bg-white p-2 border border-cbxHitam rounded-lg">
-        <img src={logoCbx} alt="CBX Fest Logo Footer" className="h-6 w-auto object-contain" />
-      </div>
-      <span className="font-black text-xl tracking-tight text-cbxHitam">CBX FEST 2026</span>
+<footer className="bg-[#FFB54F] border-t-4 border-[#0B0B0B] py-8 px-6 mt-16 text-[#0B0B0B]">
+  <div className="max-w-7xl mx-auto flex justify-between items-center">
+    
+    {/* Kiri: Logo & Nama */}
+    <div className="flex items-center gap-4 mt-4">
+      <img src={logoCbx} alt="Logo" className="w-12 h-12 object-contain" />
+      <span className="font-black text-xl uppercase">CBX FEST 2026</span>
     </div>
-    <p className="text-xs text-cbxHitam font-bold text-center md:text-right">
-      &copy; 2026 CBX FEST. Powered with 🔥 by Ghina. All Rights Reserved.
-    </p>
+
+    {/* Tengah: Karakter (Muncul di layar laptop saja) */}
+    <div className="hidden md:flex justify-center items-center gap-2">
+       <img src={imgCewek} alt="Cewek" className="h-16 object-contain" />
+       <img src={imgCowok1} alt="Cowok 1" className="h-16 object-contain" />
+       <img src={imgCowok2} alt="Cowok 2" className="h-16 object-contain" />
+       <img src={imgCowok3} alt="Cowok 3" className="h-16 object-contain" />
+    </div>
+
+    {/* Kanan: Copyright & Sosmed */}
+    <div className="flex flex-col items-end gap-2">
+      <div className="font-black text-sm">© 2026 CBX FEST.</div>
+      <div className="flex flex-col items-end gap-1 text-xs font-bold underline">
+        <a href="https://instagram.com/cbxfestival" target="_blank" rel="noreferrer">IG: @CBXFESTIVAL</a>
+        <a href="mailto:cbxfest7@gmail.com">EMAIL: CBXFEST7@GMAIL.COM</a>
+      </div>
+    </div>
+    
   </div>
 </footer>
 
