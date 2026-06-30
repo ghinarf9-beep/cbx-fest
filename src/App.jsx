@@ -8,6 +8,8 @@ import imgCowok2 from './assets/elemen_cowok_2.png';
 import imgCowok3 from './assets/elemen_cowok_3.png';
 import imgLayanganPot from './assets/elemen_layangan_dan_pot.png';
 import imgPintuKrucut from './assets/elemen_pintu_dan_krucut.png';
+import blackHorsesImg from './assets/Black Horses.png';
+import westwewImg from './assets/Westwew.png';
 
 function App() {
   // State untuk mengatur halaman aktif (bisa 'home', 'about', 'lineup')
@@ -294,44 +296,29 @@ function App() {
         </main>
       )}
 
-      {/* === HALAMAN LINE-UP === */}
+{/* --- HALAMAN LINE-UP --- */}
 {currentPage === 'lineup' && (
   <main className="fade-in max-w-4xl mx-auto py-16 px-6 text-center">
     <div className="bg-cbxHijau border-4 border-cbxHitam rounded-[36px] p-8 md:p-12 shadow-[8px_8px_0px_0px_#0B0B0B] text-white">
-      <h2 className="text-4xl md:text-6xl font-black uppercase mb-2">OFFICIAL LINE-UP</h2>
-      <p className="font-bold text-lg mb-10 text-white/80">17 Agustus 2026 | Jakarta Barat</p>
-
-      {/* RUNDOWN LIST */}
-      <div className="bg-white text-cbxHitam rounded-2xl p-6 border-4 border-cbxHitam mb-10 shadow-[4px_4px_0px_0px_#0B0B0B] text-left">
-        <h3 className="font-black text-2xl uppercase mb-4 border-b-2 border-cbxHitam pb-2">Jadwal Tampil</h3>
-        <div className="space-y-4 font-bold">
-          <div className="flex justify-between border-b border-dashed border-cbxHitam pb-2">
-            <span>19.00 - 19.45</span>
-            <span className="font-black text-cbxOren">THE ADAMS</span>
-          </div>
-          <div className="flex justify-between border-b border-dashed border-cbxHitam pb-2">
-            <span>20.00 - 20.45</span>
-            <span className="font-black text-cbxBiru">REALITY CLUB</span>
-          </div>
-          <div className="flex justify-between border-b border-dashed border-cbxHitam pb-2">
-            <span>21.00 - 21.45</span>
-            <span className="font-black text-cbxHijau">HINDIA</span>
-          </div>
-          <div className="flex justify-between border-b border-dashed border-cbxHitam pb-2">
-            <span>22.00 - 22.45</span>
-            <span className="font-black text-cbxHitam">.FEAST</span>
-          </div>
-          <div className="flex justify-between pt-2">
-            <span>23.00</span>
-            <span className="font-black italic">CLOSING CEREMONY</span>
-          </div>
+      <h2 className="text-4xl md:text-6xl font-black uppercase mb-10">OFFICIAL LINE-UP</h2>
+      
+      <div className="grid md:grid-cols-2 gap-8 mb-10">
+        {/* Band 1 */}
+        <div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B]">
+          <img src={blackHorsesImg} alt="Black Horses" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
+          <h3 className="text-2xl font-black uppercase mb-2">Black Horses</h3>
+          <p className="text-sm font-bold">Band rock asal Jakarta (est. 2015). Nuansa classic rock dengan sentuhan modern.</p>
+        </div>
+        
+        {/* Band 2 */}
+        <div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B]">
+          <img src={westwewImg} alt="Westwew" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
+          <h3 className="text-2xl font-black uppercase mb-2">Westwew</h3>
+          <p className="text-sm font-bold">Kolektif musik hip-hop dan R&B asal Jakarta yang berdiri sejak tahun 2012.</p>
         </div>
       </div>
 
-      <button 
-        onClick={() => navigateTo('home')}
-        className="bg-cbxOren text-white font-black uppercase px-8 py-4 rounded-xl border-4 border-cbxHitam shadow-[4px_4px_0px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer"
-      >
+      <button onClick={() => navigateTo('home')} className="bg-cbxOren text-white font-black uppercase px-8 py-4 rounded-xl border-4 border-cbxHitam shadow-[4px_4px_0px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
         ⬅️ Kembali Ke Beranda
       </button>
     </div>
