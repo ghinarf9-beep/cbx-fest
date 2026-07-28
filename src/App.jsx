@@ -10,7 +10,7 @@ import imgLayanganPot from './assets/elemen_layangan_dan_pot.png';
 import imgPintuKrucut from './assets/elemen_pintu_dan_krucut.png';
 import westwewImg from './assets/Westwew.png';
 import wantThisImg from './assets/Want This.png';
-import wantThisLogo from './assets/wantThisLogo.png';
+import wantThisLogo from './assets/wantThislogo.png';
 import smugglingTonesImg from './assets/Smuggling Tones.png'; 
 
 function App() {
