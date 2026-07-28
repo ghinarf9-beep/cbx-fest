@@ -8,8 +8,10 @@ import imgCowok2 from './assets/elemen_cowok_2.png';
 import imgCowok3 from './assets/elemen_cowok_3.png';
 import imgLayanganPot from './assets/elemen_layangan_dan_pot.png';
 import imgPintuKrucut from './assets/elemen_pintu_dan_krucut.png';
-import blackHorsesImg from './assets/Black Horses.png';
 import westwewImg from './assets/Westwew.png';
+import wantThisImg from './assets/Want This.png';
+import wantThisLogo from './assets/wantThisLogo.png';
+import smugglingTonesImg from './assets/Smuggling Tones.png'; 
 
 function App() {
   // State untuk mengatur halaman aktif (bisa 'home', 'about', 'lineup')
@@ -298,23 +300,40 @@ function App() {
 
 {/* --- HALAMAN LINE-UP --- */}
 {currentPage === 'lineup' && (
-  <main className="fade-in max-w-4xl mx-auto py-16 px-6 text-center">
+  <main className="fade-in max-w-6xl mx-auto py-16 px-6 text-center">
     <div className="bg-cbxHijau border-4 border-cbxHitam rounded-[36px] p-8 md:p-12 shadow-[8px_8px_0px_0px_#0B0B0B] text-white">
       <h2 className="text-4xl md:text-6xl font-black uppercase mb-10">OFFICIAL LINE-UP</h2>
       
-      <div className="grid md:grid-cols-2 gap-8 mb-10">
-        {/* Band 1 */}
-        <div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B]">
-          <img src={blackHorsesImg} alt="Black Horses" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
-          <h3 className="text-2xl font-black uppercase mb-2">Black Horses</h3>
-          <p className="text-sm font-bold">Band rock asal Jakarta (est. 2015). Nuansa classic rock dengan sentuhan modern.</p>
+      <div className="grid md:grid-cols-3 gap-8 mb-10">
+        {/* Band 1: Westwew */}
+        <div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B] flex flex-col justify-between">
+          <div>
+            <img src={westwewImg} alt="Westwew" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
+            <h3 className="text-2xl font-black uppercase mb-2">Westwew</h3>
+            <p className="text-sm font-bold">Kolektif hip-hop dan R&B asal Jakarta yang berdiri sejak tahun 2012. Dikenal lewat kolaborasi musik urban yang kuat, energi panggung yang solid, serta konsistensi dalam meramaikan kancah musik independen Indonesia.</p>
+          </div>
         </div>
         
-        {/* Band 2 */}
-        <div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B]">
-          <img src={westwewImg} alt="Westwew" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
-          <h3 className="text-2xl font-black uppercase mb-2">Westwew</h3>
-          <p className="text-sm font-bold">Kolektif musik hip-hop dan R&B asal Jakarta yang berdiri sejak tahun 2012.</p>
+        {/* Band 2: Want This */}
+<div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B] flex flex-col justify-between">
+  <div>
+    <img src={wantThisImg} alt="Want This" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
+    <div className="flex items-center justify-center gap-3 mb-2">
+      <h3 className="text-2xl font-black uppercase">Want This</h3>
+      {/* Logo tambahan band Want This */}
+      <img src={wantThisLogo} alt="Logo Want This" className="w-8 h-8 object-contain" />
+    </div>
+    <p className="text-sm font-bold">Band modern rock / pop-punk asal Jakarta (est. 2025) yang membawakan energi khas era 2010-an dengan sentuhan modern. Baru saja merilis debut single bertajuk "Perspektif".</p>
+  </div>
+</div>
+
+        {/* Band 3: Smuggling Tones */}
+        <div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B] flex flex-col justify-between">
+          <div>
+            <img src={smugglingTonesImg} alt="Smuggling Tones" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
+            <h3 className="text-2xl font-black uppercase mb-2">Smuggling Tones</h3>
+            <p className="text-sm font-bold">Band rock asal Jakarta (est. 2024). Memadukan hard rock, glam metal, dan rock 'n' roll klasik menjadi warna musik tajam yang penuh karakter.</p>
+          </div>
         </div>
       </div>
 
