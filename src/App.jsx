@@ -11,7 +11,7 @@ import imgPintuKrucut from './assets/elemen_pintu_dan_krucut.png';
 import westwewImg from './assets/Westwew.png';
 import wantThisImg from './assets/Want This.png';
 import wantThisLogo from './assets/wantThislogo.png';
-import smugglingTonesImg from "./assets/smuggling-tones.png"; 
+import smugglingtoneImg from "./assets/smuggling-tone.png"; 
 
 function App() {
   // State untuk mengatur halaman aktif (bisa 'home', 'about', 'lineup')
