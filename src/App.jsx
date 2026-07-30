@@ -11,7 +11,7 @@ import imgPintuKrucut from './assets/elemen_pintu_dan_krucut.png';
 import westwewImg from './assets/Westwew.png';
 import wantThisImg from './assets/Want This.png';
 import wantThisLogo from './assets/wantThislogo.png';
-import smugglingtoneImg from "./assets/smuggling-tone.png"; 
+import smugglingtoneImg from "./assets/smuggling_tone.png"; 
 
 function App() {
   // State untuk mengatur halaman aktif (bisa 'home', 'about', 'lineup')
@@ -330,7 +330,7 @@ function App() {
         {/* Band 3: Smuggling Tone */}
         <div className="bg-white text-cbxHitam p-6 rounded-2xl border-4 border-cbxHitam shadow-[6px_6px_0px_0px_#0B0B0B] flex flex-col justify-between">
           <div>
-            <img src={smugglingToneImg} alt="Smuggling Tone" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
+            <img src={smugglingtoneImg} alt="Smuggling Tone" className="w-full h-48 object-cover rounded-xl mb-4 border-2 border-cbxHitam" />
             <h3 className="text-2xl font-black uppercase mb-2">Smuggling Tone</h3>
             <p className="text-sm font-bold">Band rock asal Jakarta (est. 2024). Memadukan hard rock, glam metal, dan rock 'n' roll klasik menjadi warna musik tajam yang penuh karakter.</p>
           </div>
