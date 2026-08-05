@@ -248,9 +248,9 @@ function App() {
                 <p>✅ Tiket Masuk Eksklusif untuk Crew Tenant</p>
               </div>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://forms.gle/9YEagwiiyunijxHj8" className="bg-cbxHijau text-white font-black uppercase text-base tracking-wider px-8 py-4 rounded-xl border-2 border-cbxHitam shadow-[4px_4px_0px_0px_#0B0B0B] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
-                  🎪 Isi Formulir Tenant (Google Form)
-                </a>
+                <div className="bg-cbxHitam text-white font-black uppercase text-base tracking-wider px-8 py-4 rounded-xl border-2 border-cbxHitam shadow-[4px_4px_0px_0px_#0B0B0B]">
+                  🎪 Pendaftaran UMKM sementara ditutup
+                </div>
                 <a href="https://wa.me/6285135595053" target="_blank" rel="noreferrer" className="bg-white text-cbxHitam font-black uppercase text-base tracking-wider px-8 py-4 rounded-xl border-2 border-cbxHitam shadow-[4px_4px_0px_0px_#0B0B0B] hover:bg-cbxHitam hover:text-white transition-colors">
                   💬 Tanya Admin via WhatsApp
                 </a>
